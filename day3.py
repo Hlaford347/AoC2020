@@ -4,6 +4,7 @@ with open('day3.txt', 'r') as f:
 # open (.)
 # tree (#)
 # slope = right 3, down 1
+
 starting_position = [0, 0]
 current_position = starting_position
 
@@ -26,7 +27,6 @@ for slope in slopes:
     while current_position[1] < len(map):
         move(current_position, slope)
         if current_position[1] < len(map) and map[current_position[1]][current_position[0] % len(map[current_position[1]])] == '#':
-            print(current_position)
             tree_count += 1
     trees.append(tree_count)
     current_position = starting_position
