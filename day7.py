@@ -1,6 +1,4 @@
 import re
-from collections import defaultdict
-
 
 with open('day7.txt', 'r') as f:
     rules = f.read().splitlines()
