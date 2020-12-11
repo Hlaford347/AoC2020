@@ -4,14 +4,12 @@ with open('day9.txt', 'r') as f:
 preamble_pre = puzzle_input[:25]
 preamble = []
 
-for n in preamble_pre:
-    preamble.append(int(n))
+preamble = list(map(int, preamble_pre))
 
 puzzle_input_pre = puzzle_input[25:]
 puzzle_input = []
 
-for n in puzzle_input_pre:
-    puzzle_input.append(int(n))
+puzzle_input = list(map(int, puzzle_input_pre))
 
 index = 0
 valid_number = True
