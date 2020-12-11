@@ -1,7 +1,5 @@
 import itertools as it
 
-import numpy as np
-
 with open('day10.txt', 'r') as f:
     puzzle_input = f.read().splitlines()
 
@@ -46,39 +44,6 @@ def findValidArrangement(input_list: list):
     return input_list[-1] - input_list[-2] <= 3
 
 
-valid_inputs = [[1], [2]]
-
-building = True
-"""
-while building:
-
-    initial_state = valid_inputs.copy()
-    for valid_input in valid_inputs:
-        testing = True
-        number_to_check = sorted_adapter_input.index(valid_input[-1]) + 1
-        while testing:
-            if number_to_check == len(sorted_adapter_input):
-                testing = False
-                break
-            test_num = sorted_adapter_input[number_to_check]
-            working_copy = valid_input.copy()
-            working_copy[0:0] = [0]
-            working_copy.append(test_num)
-
-            if findValidArrangement(working_copy):
-                if working_copy[1:] not in valid_inputs:
-                    valid_inputs.append(working_copy[1:])
-            else:
-                testing = False
-
-            number_to_check += 1
-
-        valid_inputs.pop(valid_inputs.index(valid_input))
-
-    if initial_state == valid_inputs:
-        building = False
-"""
-
 print(sorted_adapter_input)
 
 cannot_change = []
@@ -111,8 +76,6 @@ for combo in combos:
     if sorted_adapter_input[sorted_adapter_input.index(combo[-1])+1] - sorted_adapter_input[sorted_adapter_input.index(combo[0])-1] <= 3:
         value += 1
     combo_values.append(value)
-print(combos)
-print(combo_values)
 
 ans = 1
 for n in combo_values:
