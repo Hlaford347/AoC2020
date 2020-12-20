@@ -1,6 +1,7 @@
 from functools import reduce
 import math
-from operator import itemgetter, mul
+from operator import imod, itemgetter
+
 with open('day13.txt', 'r') as f:
     puzzle_input = f.read().splitlines()
 
@@ -36,6 +37,8 @@ bus_departure = []
 for i in range(len(running_buses)):
     bus_departure.append([i, running_buses[i]])
 
+
+# Help from google
 
 def chinese_remainder(n, a):
     sum = 0
